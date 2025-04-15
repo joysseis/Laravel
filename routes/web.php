@@ -23,14 +23,13 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos' );
 
 Route::get('/contato', 'ContatoController@contato' );
 
-Route::get('/contato/{nome}/{categoria?}/{assunto?}/{mensagem?}',
+Route::get('/contato/{nome}/{categoria_id}',
     function(
-        string $nome,
-        string $categoria,
-        string $assunto,
-        string $mensagem =  'Não há informação') {
-        echo "Estamos aqui: $nome - $categoria - $assunto - $mensagem" ;
+        string $nome = 'Desconhecido',
+        int $categoria = 1
+        ) {
+        echo "Estamos aqui: $nome - $categoria " ;
     }
-);
+)-> where('categoria_id', '[0-9]+') -> where('nome', '[A-Za-z]+');
 
 /*Route::get($url, $callback)*/
