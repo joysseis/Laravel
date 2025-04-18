@@ -31,6 +31,24 @@ Route::prefix('app')->group(function() {
     Route::get('/produtos', function(){ return 'Produtos'; });
 });
 
+    Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('teste');
+
+    Route::fallback(function() {
+        echo 'A rota acessada não existe. <a href="'.route('site.index').'">clique aqui</a> para voltar a pagina inicial';
+    });
+/*
+    Route::get('/rota1', function() {
+
+    })->name('site.rota1');
+
+    Route::get('/rota2', function() {
+
+    })->name('site.rota2');
+
+    Route::redirect('/rota1, /rota2');
+
+*/
+
 /*
 Route::get('/contato/{nome}/{categoria_id}',
     function(
