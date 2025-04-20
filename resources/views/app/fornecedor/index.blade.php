@@ -34,7 +34,9 @@
 {{-- @dd($fornecedores) --}}
 
 @isset($fornecedores)
-    @for($i = 0; isset($fornecedores[$i]); $i++ )
+
+    @php $i = 0 @endphp
+    @while(isset($fornecedores[$i]))
         Fornecedor: {{ $fornecedores[0]['nome'] }}
         <br>
         Status: {{ $fornecedores[0]['status'] }}
@@ -42,7 +44,8 @@
         CNPJ: {{ $fornecedores[0]['cnpj'] ?? '' }}
         <br>
         Telefone: ({{ $fornecedores[0]['ddd'] ?? ''}}) {{ $fornecedores[1]['telefone'] ?? ''}}
-    @endfor
+    @php $i++ @endphp
+    @endwhile
 @endisset
 
 
