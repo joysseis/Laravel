@@ -11,12 +11,24 @@ class FornecedorController extends Controller
             0 => [
                 'nome' => 'Fornecedor 1',
                 'status' => 'N',
-                'cnpj' => null
+                'cnpj' => '0',
+                'ddd' => '', //sao paulo
+                'telefone' => '0000-0000'
             ],
 
             1 => [
                 'nome' => 'Fornecedor 2',
-                'status' => 'S'
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '85', //fortaleza
+                'telefone' => '0000-0000'
+            ],
+            2 => [
+                'nome' => 'Fornecedor 3',
+                'status' => 'S',
+                'cnpj' => null,
+                'ddd' => '32', //juiz de fora
+                'telefone' => '0000-0000'
             ]
         ];
 
